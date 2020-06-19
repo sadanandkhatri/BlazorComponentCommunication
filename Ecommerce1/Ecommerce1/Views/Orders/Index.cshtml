@@ -1,0 +1,164 @@
+﻿@using LinqGrouping.Models
+@model List<Group<string, Ecommerce1.Models.Order>>
+@{
+    ViewBag.Title = "Index";
+}
+@Html.AntiForgeryToken()
+<h2>Shopping cart</h2>
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    h2 {
+        background-color: #4169E1;
+        color: white;
+        text-align: center;
+        border: white 3px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #4169E1;
+        color: white;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 5% 7%;
+        font-size: 120%;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4169E1;
+        border: none;
+        border-radius: 30%;
+        box-shadow: 0 4% #999;
+    }
+
+        .button:hover {
+            background-color: black;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 30% #666;
+            transform: translateY(5%);
+        }
+
+    #tablecol1 {
+        text-align: center;
+    }
+
+    #tablecol2 {
+        text-align: center;
+    }
+
+    #tablecol3 {
+        text-align: center;
+    }
+
+    #tablecol1:hover {
+        background-color: black;
+    }
+
+    #tablecol2:hover {
+        background-color: black;
+    }
+
+    #tablecol3:hover {
+        background-color: black;
+    }
+</style>
+<!-- Bootstrap -->
+
+<div class="container body-content">
+    <div style="overflow-x:auto;">
+        <table>
+            <tr id="table1">
+                <th id="tablecol1">
+                    <h4>
+                        Product Name
+                    </h4>
+                </th>
+                <th id="tablecol2">
+                    <h4> Product Quantity</h4>
+                </th>
+                <th id="tablecol3">
+                    <h4> Product Price</h4>
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var group in Model)
+            {
+                <tr><th colspan="4">@group.Key</th></tr>
+                foreach (var item in group.Values)
+                {
+                    <tr id="table2">
+                        <td>@item.Product.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    @foreach (var item in group.Values)
+                    {
+                        <td>
+                            <button type="button" aria-label="Right Align" class="btn btn-success  " onclick="submit('@item.PacketId')">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Pay
+                            </button>
+                        </td>
+                        break;
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<script>
+
+        //submit data with jQuery AJAX
+        function submit(product) {
+            var token = $("[name='__RequestVerificationToken']").val();
+            console.log(product);
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: { __RequestVerificationToken: token, datax: product },
+                url: "/Orders/Pay"
+
+            });
+        }
+</script>
+
+
+
+
+
+

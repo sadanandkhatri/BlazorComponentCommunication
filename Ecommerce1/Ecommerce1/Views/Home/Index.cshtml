@@ -1,0 +1,346 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Rubik:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:ital@1&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- JS to open and close sidebar with overlay effect -->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse" id="nav1">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Sidebar -->
+                <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;z-index:6" id="mySidebar">
+                    <button class="w3-bar-item w3-button w3-hover-red w3-hover-text-white w3-large" onclick="w3_close()">Close &times</button>
+                    <a href="#box1" class="w3-bar-item w3-button w3-hover-none w3-hover-text-teal">About us</a>
+                    <a href="#regnav" class="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Contact us</a>
+                    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-green">Feedback</a>
+                </div>
+                <!-- Overlay -->
+                <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+                <!-- Page content -->
+                <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#box1" class="w3-hover-white">About Us</a></li>
+                <li><a href="#regnav" class="w3-hover-white">Register Query</a></li>
+                <li><a href="#regnav1" class="w3-hover-white">Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" class="w3-hover-green"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#" class="w3-hover-blue"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+            </ul>
+
+
+        </div>
+
+    </nav>
+    <topname>BuyALL</topname>
+    <botname>Empowering local businesses | Revolutionizing shopping.</botname>
+    <div class="w3-container">
+        <div class="About-Us" id="box1">
+            <h2>ABOUT US</h2>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><h3>What is BuyAll?</h3></a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3>
+                What is BuyAll.com
+            </h3>
+            <P>
+                BuyAll.com (Innovative Retail Concepts Private Limited) is  online website which make you order food,booking barber shop,clothing and groceryfrom local stores near you. With over 1000 products and over a 500 brands in our catalogue you will find everything you are looking for. Right from Fruit shops ,barber shops,clothing shops,grocery stores and all local shops near you – we have it all.
+                Choose from a wide range of options in every category, exclusively handpicked to help you find the best quality available at the lowest prices. According to bookings done on wesite we will assign you a timeslot for picking up your delivery from the shops .
+                we are trying to achieve social distancing and you all will be able to pick your order or have your work done without having to face crowded areas.we are availablein  Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Noida, Mysore, Coimbatore, Vijayawada-Guntur, Kolkata, Ahmedabad-Gandhinagar, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur, Patna, Indore and Chandigarh Tricity. You can pay online using your debit / credit card or by cash / sodexo on delivery.
+
+            </P>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+
+                <!-- Links -->
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><h3>Why should I use BuyAll?<h3></a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3>
+                Why should I use BuyAll?
+            </h3>
+            <P>
+                BuyAll.com allows you to walk away from the drudgery of grocery shopping and welcome an easy relaxed way of browsing and shopping for groceries. Discover new products and shop for all your food and grocery needs without having to wait for several hours in crowd. No more getting stuck between crowd, standing in long queues .Food shopping online is now easy as every product on your monthly shopping list, is now available online at bigbasket.com, India’s best online  store!
+            </P>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+
+                <!-- Links -->
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><h3>How do we operate?<h3></a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3>
+                How do we operate?
+            </h3>
+            <P>
+                e currently offer our services in Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Noida, Mysore, Coimbatore, Vijayawada-Guntur, Kolkata, Ahmedabad-Gandhinagar, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur, Patna, Indore and Chandigarh Tricity. city limits.
+            </P>
+
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+
+                <!-- Links -->
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><h3>How to use our website?<h3></a>
+                    </li>
+
+                </ul>
+            </nav>
+            <h3>
+                How to Use our website>
+            </h3>
+            <P>
+                1.Browse the product you need.<br>
+                2.Add to cart all the items.<br>
+                3.Select convinent time-slot.<br>
+                4.Pay online or cash.<br>
+            </P>
+            <h3>Happy Shopping</h3>
+        </div>
+        <div class="container" CLASS="regquery">
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="regnav">
+
+                <!-- Links -->
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <h3>Register Query<h3>
+                    </li>
+
+                </ul>
+            </nav>
+            <form action="/action_page.php" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="uname">Username:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="ageid" placeholder="Enter your age" name="age_name" required>
+
+                </div>
+                <div class="form-group">
+                    <label for="age">PhoneNo</label>
+                    <input type="number" class="form-control" id="phone_id" placeholder="Enter your phone no" name="phone_name" required>
+
+                </div>
+                <div class="form-group">
+                    <label for="uname">Register here:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+
+                </div>
+
+                <div class="form-group form-check" id="formid">
+                    <label class="form-check-label" id="contactid">
+                        <label for="age">How can we contact you?</label><br>
+                        <br>
+                        <label for="mail" id="maillabid">Email</label>
+
+                        <input class="form-check-input" type="checkbox" name="remember" required>
+                        <label for="phoneno" id="phonelabid">PhoneNo</label>
+
+                        <input class="form-check-input" type="checkbox" name="remember" required>
+
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitid">Submit</button><br /><br />
+            </form>
+        </div>
+        <div>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="regnav1">
+
+                <!-- Links -->
+                <ul class="navbar-nav list-unstyled">
+                    <li class="nav-item">
+                        <h3>Contact Us<h3>
+                    </li>
+                </ul>
+
+            </nav>
+            <div class="contactus" style="font-size:24px">
+            </div>
+            <div class="contactus1" style="font-size:24px">
+                <p class="p2">
+                    <a> <i class="fa fa-phone" aria-hidden="true" fa-3x></i><h4>+917070461567</h4></a>
+                    <a> <i class="fa fa-envelope" aria-hidden="true" fa-3x></i><h4>BuyAll@gmail.com</h4></a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--
+    <header>
+        <nav class="navbar navbar-inverse" id="nav1">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">BuyAll</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right" id="nav2">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </ul>
+            </div>
+
+        </nav>
+
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <ul class="list-unstyled components">
+                    <p>Welcome to BuyAll</p>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">OUR SERVICES</span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CLOTHING</a></li>
+                            <li><a href="#">GROCERIES</a></li>
+                            <li><a href="#">MEDICAL SHOPS</a></li>
+                            <li><a href="#">HOME CARE</a></li>
+                            <li><a href="#">COOKING ESSENTIALS</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a>VIEW TOKEN DETAILS</a>
+                    </li>
+                    <li>
+                        <a>WAITING LIST</a>
+                    </li>
+                    <li>
+                        <a>PAYMENT DETAILS</a>
+                    </li>
+                    <li>
+                        <a href="#regquery">REGISTER QUERY</a>
+                    </li>
+                    <li>
+                        <a href="#box1">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a>CONTACT US</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Create","contacts")">FEEDBACK</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+
+        <div class="shops" id="shops">
+            <a href="#" class="btn btn-info" role="button">CLOTHING SHOPS</a>
+            <a href="#" class="btn btn-info" role="button">BARBER SHOPS</a>
+            <a href="@Url.Action("index","ProductList")" class="btn btn-info" role="button">GROCERIES SHOPS</a>
+            <a href="#" class="btn btn-info" role="button">MORE</a>
+        </div>
+
+    </header>
+            -->
+    <!-- jQuery (necessa-*;ry for Bootstrap's JavaScript plugins) -->
+
+
+</body>
+</html>

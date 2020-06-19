@@ -1,0 +1,154 @@
+﻿#sidebar {
+    background-color: rgb(37, 31, 31);
+    border: 2px solid grey dotted;
+    color: white;
+    width: 30%;
+    float: left;
+    padding: 10px;
+}
+
+topname {
+    color: white;
+    font-family: 'Monoton', cursive;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 64px;
+    position: absolute;
+    right: 40%;
+    top: 40%;
+    padding: 20px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+botname {
+    color: white;
+    background-color: darkslategray;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 64px;
+    position: absolute;
+    right: 20%;
+    top: 55%;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+.contactus {
+    color: white;
+}
+
+#regnav {
+    margin-top: 10%;
+    border-bottom: white 2px double;
+}
+
+    #regnav p {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+.contactus a {
+    padding-right: 2%;
+}
+
+.contactus p {
+    padding-bottom: 3%;
+}
+
+.regquery {
+    margin-top: 10%;
+}
+
+.contactus {
+    text-align: center;
+}
+
+#box1 a {
+    color: white;
+    margin-top: 4%;
+}
+
+#box1 p {
+    margin-right: 10%;
+    margin-left: 4%;
+    padding: 3%;
+    border: rgba(0, 0, 255, 0.582) 2px dotted;
+}
+
+#sidebar a {
+    color: white;
+}
+
+    #sidebar a:hover {
+        color: white;
+    }
+
+#regnav h3 {
+    color: white;
+    text-align: center;
+}
+
+#nav2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+    #nav2 a {
+        padding: 2%;
+    }
+
+#nav1 a {
+    color: white;
+}
+/* .shops
+{
+  position:  relative;
+  float:top;
+margin-left:40%;margin-right:40%;display:block;margin-top:0%;margin-bottom:40%;;
+
+} */
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/02/12/17/17/music-2060616_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 25%;
+}
+
+.contactus1 a {
+    padding-right: 2px;
+}
+
+.shops {
+    text-size-adjust: inherit;
+    /* margin-left:30%;
+margin-right:20%; */
+    padding: 40px;
+    float: left;
+    width: 45%;
+}
+
+    .shops .btn {
+        margin-right: 40px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+.About-Us {
+    margin-top: 70%;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#nav1 {
+    z-index: 5;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}

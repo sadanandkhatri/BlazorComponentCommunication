@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Rubik:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:ital@1&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- JS to open and close sidebar with overlay effect -->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-image: none;
+            background-color: antiquewhite;
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+
+    @RenderBody()
+    <nav class="navbar navbar-inverse" id="nav1">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Sidebar -->
+                <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;z-index:6" id="mySidebar">
+                    <button class="w3-bar-item w3-button w3-hover-red w3-hover-text-white w3-large" onclick="w3_close()">Close &times</button>
+                    <a href="../Tokens/Index" class="w3-bar-item w3-button w3-hover-none w3-hover-text-red">Token List</a>
+                    <a href="../Contacts/Create" class="w3-bar-item w3-button w3-hover-none w3-hover-text-green">Feedback</a>
+                    <a href="../Home/About" class="w3-bar-item w3-button w3-hover-none w3-hover-text-teal">About us</a>
+                </div>
+                <!-- Overlay -->
+                <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+                <!-- Page content -->
+                <button class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="../Home/HomeP" class="w3-hover-white"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li><a href="../Orders/Index" class="w3-hover-white"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                <li><a href="../Home/Contact" class="w3-hover-white"><span class="glyphicon glyphicon-phone-alt"></span>Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../LogInLogout/Login" class="w3-hover-green"><span class="glyphicon glyphicon-user"></span></a></li>
+
+            </ul>
+
+
+        </div>
+
+    </nav>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
