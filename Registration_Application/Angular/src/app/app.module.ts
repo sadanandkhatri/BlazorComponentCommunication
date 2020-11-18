@@ -30,7 +30,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      progressBar: true
+      
     })
   ],
   providers: [UserService],

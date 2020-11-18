@@ -32,9 +32,9 @@ export class RegistrationComponent implements OnInit {
  
   });
 
-  comparePasswords(Password: string, ConfirmPassword: string) {
+  comparePasswords(user: User) {
 
-    if (Password === ConfirmPassword) {
+    if (user.Password === user.ConfirmPassword) {
       return true;
     }
     return false;
@@ -46,10 +46,10 @@ export class RegistrationComponent implements OnInit {
 
   OnSubmit() {
     console.log(this.formModel);
-    if (this.comparePasswords) {
+    if (this.comparePasswords(this.formModel.value)) {
       this.service.register(this.formModel.value).subscribe(
         (res: any) => {
-          if (res.succeded) {
+          if (res.succeeded) {
             this.formModel.reset();
             this.toastr.success('New User Created', 'Registration Successful');
           }
