@@ -26,7 +26,7 @@ namespace Registration_Application.Controllers
         {
             string userid = User.Claims.First(c => c.Type == "UserID").Value;
             var user = await _usermanager.FindByIdAsync(userid);
-            return new { user.UserName };
+            return new { user.UserName,user.DOb,user.Email};
         }
     }
 }

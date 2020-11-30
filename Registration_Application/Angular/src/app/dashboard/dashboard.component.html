@@ -1,4 +1,24 @@
+
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">DashBorad</a>
-  <button class="btn btn-danger my-2 my-sm-0" (click) ="onLogout()">Logout</button>
+  <a class="navbar-brand text-white">Hello {{UserProfile.userName}}</a>
+  <div class="dropdown" mdbDropdown>
+    <button mdbDropdownToggle mdbBtn type="button" class="btn btn-primary" (click)="onClick()">
+      Profile
+    </button>
+    
+  </div>
 </nav>
+
+<div  class="classC" *ngIf="show">
+  <ul >
+    <li class="dropdown-item" style="text-decoration-color : white">{{UserProfile.userName}}</li>
+    <li class="dropdown-item" style="text-decoration-color : white">{{UserProfile.email}}</li>
+    <li class="dropdown-item" style="text-decoration-color : white">{{UserProfile.dOb}}</li>
+  </ul>
+    <button  class="btn btn-danger my-2 my-sm-0 logoutbtn" (click)="onLogout()">Logout</button>
+  
+</div>
+<div class="container">
+  <app-customers></app-customers>
+</div>
+

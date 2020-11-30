@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  
+    <tr *ngFor="let cust of custservice1.list">
+        <td (click)="populateForm(cust)">{{cust.custId}}</td>
+        <td (click)="populateForm(cust)">{{cust.fullName}}</td>
+        <td (click)="populateForm(cust)">{{cust.mobile}}</td>
+        <td (click)="populateForm(cust)">{{cust.insuranceType}}</td>
+        <td (click)="populateForm(cust)">{{cust.age}}</td>
+        <td (click)="populateForm(cust)">{{cust.gender}}</td>
+        <td><button (click)="OnDelete(cust.custId)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+</table>

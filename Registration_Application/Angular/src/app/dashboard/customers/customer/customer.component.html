@@ -1,0 +1,34 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <input type="hidden" name="custId" #custId="ngModel" [(ngModel)]="custservice.formData.custId">
+        <label>FullName</label>
+        <input name="fullName" #fullName="ngModel" [(ngModel)]="custservice.formData.fullName" class="form-control" required>
+        <div class="validation-error" *ngIf="fullName.invalid && fullName.touched">This field is required</div>
+    </div>
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input name="mobile" #mobile="ngModel" [(ngModel)]="custservice.formData.mobile" class="form-control" required>
+        <div class="validation-error" *ngIf="mobile.invalid && mobile.touched">This field is required</div>
+    </div>
+    
+    <div class="form-group">
+        <label>InsuranceType</label>
+        <input name="insuranceType" #insuranceType="ngModel" [(ngModel)]="custservice.formData.insuranceType" class="form-control" required>
+        <div class="validation-error" *ngIf="insuranceType.invalid && insuranceType.touched">This field is required</div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label>Age</label>
+        <input type="number" name="age" #age="ngModel" [(ngModel)]="custservice.formData.age" class="form-control" required>
+        <div class="validation-error" *ngIf="age.invalid && age.touched">This field is required</div>
+    </div>
+    <div class="form-group col-md-6">
+        <label>Gender</label>
+        <input name="gender" #gender="ngModel" [(ngModel)]="custservice.formData.gender" class="form-control" required>
+        <div class="validation-error" *ngIf="gender.invalid && gender.touched">This field is required</div>
+    </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Submit</button>
+    </div>
+</form>

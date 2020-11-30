@@ -13,6 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { IgxDropDownModule } from 'igniteui-angular';
+import { CustomerService } from './shared/customer.service';
+import {CustomersComponent} from 'src/app/dashboard/customers/customers.component';
+import {CustomerComponent} from 'src/app/dashboard/customers/customer/customer.component';
+import {CustomerListComponent} from 'src/app/dashboard/customers/customer-list/customer-list.component'
+
+
+
  
 @NgModule({
   declarations: [
@@ -20,7 +28,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UserComponent,
     RegistrationComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CustomerComponent,
+    CustomersComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +42,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       
-    })
+    }),
+    IgxDropDownModule,
+    
   ],
-  providers: [UserService],
+  providers: [UserService,CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
