@@ -7,8 +7,8 @@
     </div>
     <div class="form-group">
         <label>Mobile Number</label>
-        <input name="mobile" #mobile="ngModel" [(ngModel)]="custservice.formData.mobile" class="form-control" required>
-        <div class="validation-error" *ngIf="mobile.invalid && mobile.touched">This field is required</div>
+        <input name="mobile" #mobile="ngModel" [(ngModel)]="custservice.formData.mobile" class="form-control" required minlength="10" maxlength="10">
+        <div class="validation-error" *ngIf="mobile.invalid && mobile.touched">This field requires 10 character</div>
     </div>
     
     <div class="form-group">
