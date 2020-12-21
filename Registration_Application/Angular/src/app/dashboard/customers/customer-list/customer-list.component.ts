@@ -23,11 +23,17 @@ export class CustomerListComponent implements OnInit {
   }
 
   OnDelete(custId : number){
-      this.custservice1.deleteCustomer(custId).subscribe(res => 
-        {
-          this.custservice1.refreshList();
-          this.toastr.success('Deleted Successfully','Customer Register');
-      })
+
+    this.custservice1.openConfirmDialogbox().afterClosed().subscribe(res => {
+      if(res){
+        this.custservice1.deleteCustomer(custId).subscribe(res => 
+          {
+            this.custservice1.refreshList();
+            this.toastr.success('Deleted Successfully','Customer Deleted');
+        });
+      }
+    });
+     
   }
 
 }

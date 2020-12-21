@@ -12,9 +12,13 @@
     </div>
     
     <div class="form-group">
-        <label>InsuranceType</label>
-        <input name="insuranceType" #insuranceType="ngModel" [(ngModel)]="custservice.formData.insuranceType" class="form-control" required>
-        <div class="validation-error" *ngIf="insuranceType.invalid && insuranceType.touched">This field is required</div>
+        <label>Insurance Type</label>
+            <select (change)="selectInput($event)" matNativeControl required name="insuranceType" #insuranceType="ngModel" [(ngModel)]="custservice.formData.insuranceType" class="form-control">
+              <option value="Life Insurance">Life Insurance</option>
+              <option value="Vehicle Insurance">Vehicle Insurance</option>
+              <option value="Mediclaim">Mediclaim</option>
+            </select>
+            <div class="validation-error" *ngIf="insuranceType.invalid && insuranceType.touched">This field is required</div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-6">
@@ -23,12 +27,29 @@
         <div class="validation-error" *ngIf="age.invalid && age.touched">This field is required</div>
     </div>
     <div class="form-group col-md-6">
-        <label>Gender</label>
-        <input name="gender" #gender="ngModel" [(ngModel)]="custservice.formData.gender" class="form-control" required>
+        
+            <label>Gender</label>
+            <select matNativeControl required name="gender" #gender="ngModel" [(ngModel)]="custservice.formData.gender" class="form-control">
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+            </select>
         <div class="validation-error" *ngIf="gender.invalid && gender.touched">This field is required</div>
     </div>
     </div>
+    <div class="form-row" *ngIf="insurace">
+    <div  class="form-group  col-md-6" >
+        <label>Maturity Date</label>
+        <input type="date" class="form-control" name="matdate" #matdate="ngModel" [(ngModel)]="custservice.formData.matdate" required >
+    </div>
+    <div class="form-group  col-md-6">
+        <label>Amount</label>
+        <input type="number" class="form-control" name="Amount" #Amount="ngModel" [(ngModel)]="custservice.formData.Amount" required >
+    </div>
+</div>
+
+
     <div class="form-group">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Submit</button>
+        <button type="submit"  class="btn btn-lg btn-block submitbtn">Submit</button>
     </div>
 </form>

@@ -82,6 +82,19 @@ namespace Registration_Application.Controllers
                 return BadRequest(new { message = "UserName or Password incorrect" });
             }
         }
+         
+        [HttpPost]
+        [Route("Update")]
+        public async Task<object> Update(ApplicationUser newuser)
+        {
+             await _usermanager.UpdateNormalizedEmailAsync(newuser);
+            return Ok();
+            //var user = await _usermanager.FindByIdAsync(userid);
+            //user.Email = newuser.Email;
+            //user. = newuser.
+
+
+        }
 
     }
 }

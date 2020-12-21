@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,11 +16,13 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { IgxDropDownModule } from 'igniteui-angular';
 import { CustomerService } from './shared/customer.service';
 import {CustomersComponent} from 'src/app/dashboard/customers/customers.component';
 import {CustomerComponent} from 'src/app/dashboard/customers/customer/customer.component';
-import {CustomerListComponent} from 'src/app/dashboard/customers/customer-list/customer-list.component'
+import {CustomerListComponent} from 'src/app/dashboard/customers/customer-list/customer-list.component';
+import { DialogboxComponent } from './dashboard/dialogbox/dialogbox.component';
+import { UpdateComponent } from './user/update/update.component';
+import { ProfileComponent } from './dashboard/profile/profile.component'
 
 
 
@@ -31,7 +36,10 @@ import {CustomerListComponent} from 'src/app/dashboard/customers/customer-list/c
     DashboardComponent,
     CustomerComponent,
     CustomersComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    DialogboxComponent,
+    UpdateComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,10 @@ import {CustomerListComponent} from 'src/app/dashboard/customers/customer-list/c
     ToastrModule.forRoot({
       
     }),
-    IgxDropDownModule,
+    MatDialogModule,
+    MatIconModule,
+    MatFormFieldModule
+  
     
   ],
   providers: [UserService,CustomerService],

@@ -5,4 +5,6 @@ export class Customer {
      insuranceType : string;
      age : number;
      gender : string;
+     matdate:Date;
+     Amount : number;
 }

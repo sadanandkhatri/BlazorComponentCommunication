@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
 import { ItemModel, MenuEventArgs, DropDownButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { CustomerService } from '../shared/customer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,33 +17,24 @@ export class DashboardComponent implements OnInit {
  
 
 
-  constructor(private router: Router, private service: UserService) {
+  constructor(private router: Router, private service: CustomerService) {
   }
 
   ngOnInit(): void {
-  this.service.getUserData().subscribe(
-        res => {
-          this.UserProfile = res;
-          console.log(this.UserProfile);
-        },
-        err => {
-          console.log(err);
-        }
-      )
+  
 
   }
 
 
-  onLogout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['user/login']);
-  }
 
   onClick() {
-    console.log(this.show);
-    this.show = !this.show;
-    console.log(this.show);
+    this.service.openProfile().afterClosed().subscribe();
     
   }
+
+  // Update(){
+  //   //this.UserProfile.id;
+  //   this.router.navigate(['user/update']);
+  // }
  
 }

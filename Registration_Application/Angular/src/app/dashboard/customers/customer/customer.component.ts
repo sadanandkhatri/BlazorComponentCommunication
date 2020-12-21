@@ -9,11 +9,14 @@ import { CustomerService } from 'src/app/shared/customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  
+ insurace : boolean;
 
   constructor(public custservice : CustomerService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.resetform();
+   
   }
 
   resetform(form? : NgForm){
@@ -26,14 +29,17 @@ export class CustomerComponent implements OnInit {
       fullName : '',
       insuranceType:'',
       mobile:'',
-      age: 0,
-      gender : ''
+      age: undefined,
+      gender : '',
+      matdate : new Date(),
+      Amount: undefined
       }
   }
 
   onSubmit(form : NgForm){
     if(form.value.custId == null){
       this.insertRecord(form);
+      
     }
     else{
         this.updateRecord(form);
@@ -52,6 +58,18 @@ export class CustomerComponent implements OnInit {
       });
     
       
+  }
+
+  selectInput(event){
+    let selected = event.target.value;
+    if(selected == "Life Insurance")
+        this.insurace = true;
+      
+    else
+      this.insurace=false;
+
+
+
   }
 
   updateRecord(form: NgForm){

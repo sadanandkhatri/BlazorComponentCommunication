@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { User } from '../_Classes/User';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../dashboard/profile/profile.component';
 
 
 @Injectable({
@@ -9,8 +11,11 @@ import { User } from '../_Classes/User';
 })
 export class UserService {
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient,private dialog:MatDialog) { }
   readonly URI =  "http://localhost:63919/api"
+
+
+  
 
 
   register(user: User) {
