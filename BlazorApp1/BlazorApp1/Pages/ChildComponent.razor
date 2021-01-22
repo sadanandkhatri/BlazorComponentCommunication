@@ -1,0 +1,10 @@
+﻿@page "/child"
+
+<button @onclick="@(() => OnClick.InvokeAsync(data))">Click me</button>
+
+@code {
+    public string data { get; set; } = "Hello from ChildComponent";
+
+    [Parameter] public EventCallback<string> OnClick { get; set; }
+
+}

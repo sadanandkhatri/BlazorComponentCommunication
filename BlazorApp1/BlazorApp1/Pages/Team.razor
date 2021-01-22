@@ -1,0 +1,12 @@
+﻿@page "/team/{value:int}"
+
+<h3>Team</h3>
+<p>
+    Value Received from Teams : @value
+</p>
+
+@code {
+    [Parameter]
+    public int value { get; set; }
+
+}

@@ -1,0 +1,20 @@
+parent - child => Parameters 
+parameter attribute
+has to be public property variable not allowed
+
+child - parent => EventCallback
+
+component - component => Routing parameter
+pass parameter in route
+in receiving component :
+add parameter with its type to @page attribute along with path
+declare public property with parameter attribute and same name
+
+
+parent to leaf component => cascading parameter
+passes value to all child component 
+
+component - all components => State
+
+
+ 17,18,25,26,27

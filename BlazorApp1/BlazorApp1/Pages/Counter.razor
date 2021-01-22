@@ -1,0 +1,20 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<CascadingValue Name="Counter" Value="@currentCount">
+    <BlazorApp1.Controllers.Component1></BlazorApp1.Controllers.Component1>
+    
+</CascadingValue>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
