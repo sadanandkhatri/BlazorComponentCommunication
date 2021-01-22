@@ -1,0 +1,26 @@
+﻿@inject AuthenticationStateProvider AuthStateProvider
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject NavigationManager NavigationManager
+
+<AuthorizeView>
+    <Authorized>
+        <div class="top-menu">
+            <button @onclick="Logout">Logout</button>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <div>
+            <NavLink href="">Login</NavLink> |
+            <NavLink href="register">Register</NavLink>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code{
+    private async void Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+        await AuthStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("/");
+    }
+}

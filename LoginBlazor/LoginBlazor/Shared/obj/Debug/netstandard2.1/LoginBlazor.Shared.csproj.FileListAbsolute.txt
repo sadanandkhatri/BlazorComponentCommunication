@@ -1,0 +1,8 @@
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\bin\Debug\netstandard2.1\LoginBlazor.Shared.deps.json
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\bin\Debug\netstandard2.1\LoginBlazor.Shared.dll
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\bin\Debug\netstandard2.1\LoginBlazor.Shared.pdb
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\obj\Debug\netstandard2.1\LoginBlazor.Shared.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\obj\Debug\netstandard2.1\LoginBlazor.Shared.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\obj\Debug\netstandard2.1\LoginBlazor.Shared.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\obj\Debug\netstandard2.1\LoginBlazor.Shared.dll
+C:\Users\LENOVO\source\repos\LoginBlazor\LoginBlazor\Shared\obj\Debug\netstandard2.1\LoginBlazor.Shared.pdb

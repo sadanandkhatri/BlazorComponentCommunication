@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bkHbsbTQImF+/F6t/SW7opQ3ppzoOKayj8qGcEEa4FSg6p5zhb6H/re0qZwM+A9D/Yh2vT33C2DBUNoCdfV7Ew==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\source\\repos\\LoginBlazor\\LoginBlazor\\Shared\\LoginBlazor.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
