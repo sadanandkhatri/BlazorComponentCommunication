@@ -1,0 +1,34 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<ChildComponent1></ChildComponent1>
+
+ @code{
+
+
+     //1st 3 function are called/rendered twice when application os loaded for 1st time
+                 public override Task SetParametersAsync(ParameterView parameters)
+                 {
+                 return base.SetParametersAsync(parameters);
+                 }
+                 protected override void OnInitialized()
+                 {
+                 base.OnInitialized();
+                 }
+                 protected override void OnParametersSet()
+                 {
+                 base.OnParametersSet();
+                 }
+
+     //should render is skipped 1st time the page is rendered 
+                 protected override bool ShouldRender()
+                 {
+                 return base.ShouldRender();
+                 }
+                 protected override void OnAfterRender(bool firstRender)
+                 {
+                 base.OnAfterRender(firstRender);
+                 }
+}

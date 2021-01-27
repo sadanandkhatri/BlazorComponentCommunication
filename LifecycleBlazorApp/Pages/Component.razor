@@ -1,0 +1,20 @@
+﻿<h3>Component</h3>
+<button @onclick="ClickMe">Click</button>
+<br /><br />
+@BodyTemplate
+
+@code {
+    [Parameter]
+    public  RenderFragment BodyTemplate { get; set; }
+
+    protected override void OnAfterRender(bool firstRender) //Child component is only rendered once 1st time
+    {
+        base.OnAfterRender(firstRender);
+        Console.WriteLine($"Child Component - OnAfterRender at {DateTime.Now.ToString("hh:MM:ss.fff")}");
+    }
+
+    void ClickMe()
+    {
+
+    }
+}

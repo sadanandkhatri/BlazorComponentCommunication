@@ -1,0 +1,72 @@
+﻿@page "/counter"
+@using LifecycleBlazorApp.Store.CounterStore;
+@inject CounterStore counterstore 
+@implements IDisposable
+@using LifecycleBlazorApp.Store;
+@inject IActionDispatcher dispatcher 
+@*@using System.Timers;*@
+
+<h1>Counter</h1>
+
+<p>Current count: @counterstore.GetState().Count</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount" >Click me</button>
+@*<br />
+<Component>
+    <BodyTemplate>
+        <button @onclick="ClickBody">Click from body template</button>
+    </BodyTemplate>
+</Component>*@
+
+@*@code {
+    private int currentCount = 0;
+    // private Timer timer;
+
+    //protected override void OnInitialized()
+    //{
+    //    base.OnInitialized();
+    //    timer = new Timer(2000);
+    //    timer.Elapsed += OnTimedEvent;
+    //    timer.Enabled = true;
+    //}
+
+    //private void OnTimedEvent(object source,ElapsedEventArgs e )
+    //{
+    //    IncrementCount();
+    //    Console.WriteLine($"counter Value: {this.currentCount}" );
+    //}
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    protected override void OnAfterRender(bool firstRender) //as long as any UI event is triggred component is rerendred
+    {                                                       //UI evennt has to happen inside the component
+        base.OnAfterRender(firstRender);
+        Console.WriteLine($"Counter Component - OnAfterRender at {DateTime.Now.ToString("hh:MM:ss.fff")}");
+    }
+
+    private void ClickBody()
+    {
+
+    }
+}*@
+
+@code{
+    private void IncrementCount()
+    {
+        dispatcher.Dispatcher(new IncrementAction());
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        counterstore.AddStateChangeListener(() => { StateHasChanged(); });
+    }
+
+    public void Dispose()
+    {
+        counterstore.RemoveStateChangeListener(() => { StateHasChanged(); });
+    }
+}
